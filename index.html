@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин бытовой техники</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Магазин бытовой техники</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/cart.html" id="cart-link">Корзина (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-links">
+                        <a href="/login.html">Вход</a>
+                        <a href="/register.html">Регистрация</a>
+                    </li>
+                    <li id="user-menu" style="display: none;">
+                        <span id="username"></span>
+                        <button onclick="logout()">Выход</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="products">
+            <h2>Каталог товаров</h2>
+            <div class="filters">
+                <input type="text" id="search-input" placeholder="Поиск товаров..." oninput="searchProducts()">
+                <select id="category-filter" onchange="filterByCategory()">
+                    <option value="">Все категории</option>
+                </select>
+            </div>
+            <div id="product-list" class="product-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Магазин бытовой техники. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
